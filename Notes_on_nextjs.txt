@@ -1,4 +1,5 @@
-****Creating routes in the app/ directory:****
+****Creating routes in the app/ directory:********Creating routes in the app/ directory:****
+****Creating routes in the app/ directory:********Creating routes in the app/ directory:****
 
 Each folder inside the app/ directory corresponds to a route.
 You create a page.tsx file inside the folder to define the content for that route.
@@ -16,7 +17,9 @@ my-next-app/
 
 
 
-***MetaData***
+***MetaData******MetaData******MetaData******MetaData******MetaData***
+***MetaData******MetaData******MetaData******MetaData******MetaData***
+
 https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 
 Page title: What shows up in the browser tab.
@@ -37,8 +40,8 @@ export const metadata: Metadata = {
 
 
 
-***Error Handiling***
-
+***Error Handiling******Error Handiling******Error Handiling******Error Handiling***
+***Error Handiling******Error Handiling******Error Handiling******Error Handiling***
 
 Common: Handle uncaught errors below the root layout with error.js.
 Optional: Handle granular uncaught errors with nested error.js files (e.g. app/dashboard/error.js)
@@ -80,3 +83,24 @@ export default function Error({
 
 test this by adding a throw error into page of dirrectory he are handiling error
   throw new Error('Not today')
+
+
+
+***Fetching******Fetching******Fetching******Fetching******Fetching******Fetching***
+***Fetching******Fetching******Fetching******Fetching******Fetching******Fetching***
+
+can fetch data dirreclty on page.tsx of desired directory
+
+const Fetch1 = async () => {
+    const res = await fetch('http://nbadjangoapplication-env.eba-fpdumciw.us-east-2.elasticbeanstalk.com/api/players/', { cache: 'no-store' });
+    const data = await res.json();
+  
+    return (
+      <div>
+        <h1>Fetch1 Page</h1>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+      </div>
+    );
+  };
+  
+  export default Fetch1;
