@@ -89,7 +89,30 @@ test this by adding a throw error into page of dirrectory he are handiling error
 ***Fetching******Fetching******Fetching******Fetching******Fetching******Fetching***
 ***Fetching******Fetching******Fetching******Fetching******Fetching******Fetching***
 
-can fetch data dirreclty on page.tsx of desired directory
+https://nextjs.org/docs/app/building-your-application/data-fetching/fetching#reference
+
+1. Static Generation (SSG): Pre-rendering with getStaticProps
+When: Data is fetched at build time, and the HTML is generated once during the build process.
+Use Case: Use when data doesn’t change often (e.g., blog posts, marketing pages).
+Revalidation: You can use the revalidate option to fetch updated data at a specific interval after the page is built.
+
+2. Server-Side Rendering (SSR): Fetching with getServerSideProps
+When: Data is fetched on every request, which means the HTML is generated dynamically on the server.
+Use Case: Use when data is frequently changing and you need fresh data every time (e.g., user dashboard, live scores).
+
+3. Client-Side Fetching: Fetching in the browser using useEffect or useSWR
+When: Data is fetched in the browser after the page has been delivered.
+Use Case: Use when SEO is not a priority or the data changes frequently on the client (e.g., user interactions, live updates).
+Libraries: You can use useSWR for client-side caching and revalidation.
+
+4. Incremental Static Regeneration (ISR): Rebuilding static pages on demand
+When: You can statically generate pages at build time and update them after a certain interval or when requests come in.
+Use Case: When you need the benefits of SSG but with some dynamic updates over time.
+This is achieved using getStaticProps with the revalidate option.
+
+5. Parallel and Sequential Fetching (with await): Fetching multiple APIs concurrently
+When: You may need to fetch multiple APIs in parallel or in sequence to optimize performance.
+
 
 const Fetch1 = async () => {
     const res = await fetch('http://nbadjangoapplication-env.eba-fpdumciw.us-east-2.elasticbeanstalk.com/api/players/', { cache: 'no-store' });
