@@ -1,0 +1,20 @@
+Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+    at setupFsCheck (C:\Users\timde\Documents\CodeVault\NextjsProjects\NBA_nextjs\nba-next-app\node_modules\next\dist\server\lib\router-utils\filesystem.js:151:19)
+    at async initialize (C:\Users\timde\Documents\CodeVault\NextjsProjects\NBA_nextjs\nba-next-app\node_modules\next\dist\server\lib\router-server.js:62:23)
+    at async Server.<anonymous> (C:\Users\timde\Documents\CodeVault\NextjsProjects\NBA_nextjs\nba-next-app\node_modules\next\dist\server\lib\start-server.js:249:36)
+
+Solutions:
+try 
+npm run dev
+
+if stuck in pending 
+https://stackoverflow.com/questions/77232531/run-of-a-next-js-app-stuck-npm-run-dev-doesnt-work
+
+Delete the .next folder
+Sometimes the .next folder can become corrupted resulting in errors like this.
+
+a. On Mac press CTRL + C on windows CTRL + C to kill the terminal
+
+b. Delete the .next folder
+
+c. Run the command npm run dev and give it time as the .next folder is rebuilt and runs the app
