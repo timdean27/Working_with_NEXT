@@ -127,3 +127,27 @@ const Fetch1 = async () => {
   };
   
   export default Fetch1;
+
+
+
+****Dynamic Routes********Dynamic Routes********Dynamic Routes****
+****Dynamic Routes********Dynamic Routes********Dynamic Routes****
+
+  https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes
+
+A Dynamic Segment can be created by wrapping a file or folder name in square brackets: [segmentName]. For example, [id] or [slug].
+Dynamic Segments can be accessed from useRouter.
+
+For example, a blog could include the following route pages/nba_fetch_allplayers/[player_id].js where [player_id] is the Dynamic Segment for blog posts.
+
+For Deeper routing make sure Folder nameing is same as link
+
+example if link is           
+<Link href={`/nba_fetch_allplayers/player/Season/${player.player_id}`}>{player.player_id}</Link>
+
+then folder structure is 
+
+/player
+    /Season
+          /[player_id]
+                /page.tsx
